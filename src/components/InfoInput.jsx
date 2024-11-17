@@ -7,7 +7,6 @@ const InfoInput = ({ content }) => {
 
   const onRemove = () => {
     console.log("재료 삭제하기");
-    console.log("재료 삭제하기");
   };
 
   // view
