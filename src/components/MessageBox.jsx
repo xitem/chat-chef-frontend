@@ -36,11 +36,7 @@ const MessageBox = ({ messages, isLoading }) => {
                 <span className="text-base font-medium">맛있는 쉐프</span>
                 <div className="pt-3 pl-2">
                   <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none">
-                    {isLoading ? (
-                      <PulseLoader size={5} color="#46A195" />
-                    ) : (
-                      data.content
-                    )}
+                    {data.content}
                   </span>
                 </div>
               </div>
@@ -48,6 +44,22 @@ const MessageBox = ({ messages, isLoading }) => {
           )}
         </div>
       ))}
+      {isLoading && (
+        <div className="py-4 max-w-3/4 flex">
+          <div className="min-w-10 w-10 max h-10 bg-chef-green-500 rounded-full overflow-hidden">
+            <img src={"./images/chef.svg"} alt="" />
+          </div>
+          <div className="pl-3">
+            <span className="text-base font-medium">맛있는 쉐프</span>
+            <div className="pt-3 pl-2">
+              <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none">
+                {/* {data.content} */}
+                <PulseLoader size={5} color="#46A195" />
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
       <div ref={ref} />
     </>
   );

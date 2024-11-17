@@ -9,10 +9,9 @@ const Chat = () => {
   const [value, setValue] = useState("");
 
   // TODO: set함수 추가하기
-  const [messages] = useState([]);
-  const [isInfoLoading] = useState(true);
-  const [isMessageLoading] = useState(false);
-
+  const [messages] = useState([]); // chatGPT와 사용자의 대화 메시지 배열
+  const [isInfoLoading] = useState(false); // 최초 정보 요청시 로딩
+  const [isMessageLoading] = useState(true); // 사용자와 메시지 주고 받을때 로딩
   const hadleChange = (event) => {
     const { value } = event.target;
     console.log("value==>", value);
