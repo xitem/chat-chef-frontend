@@ -14,14 +14,6 @@ const Info = () => {
     console.log("재료 추가하기");
   };
 
-  const handleChangeData = () => {
-    console.log("재료명 변경..");
-  };
-
-  const hanldeRemove = () => {
-    console.log("재료 삭제하기");
-  };
-
   const handleNext = () => {
     console.log("chat페이지로 이동");
   };
@@ -48,12 +40,7 @@ const Info = () => {
             {/* START:input 영역 */}
             <div>
               {ingredientList.map((item) => (
-                <InfoInput
-                  key={item.id}
-                  content={item}
-                  onChange={handleChangeData}
-                  onRemove={hanldeRemove}
-                />
+                <InfoInput key={item.id} content={item} />
               ))}
             </div>
             {/* END:input 영역 */}

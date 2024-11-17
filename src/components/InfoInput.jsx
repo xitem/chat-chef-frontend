@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const InfoInput = ({ content, onChange, onRemove }) => {
+const InfoInput = ({ content }) => {
   // logic
   const { label, text } = content;
 
-  const [value, setValue] = useState("");
-
-  const handleChange = (event) => {
-    const { value } = event.target;
-    setValue(value);
-    onChange({ ...content, value });
+  const onRemove = () => {
+    console.log("재료 삭제하기");
   };
 
   // view
@@ -29,8 +25,6 @@ const InfoInput = ({ content, onChange, onRemove }) => {
           id={label}
           name={label}
           placeholder={"남은 재료를 입력해주세요"}
-          value={value}
-          onChange={handleChange}
           className="border placeholder-gray-400 focus:outline-none
                       focus:border-black w-full pt-4 pr-9 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                       border-chef-gray-200 rounded-2xl placeholder:text-chef-gray-200"
@@ -38,7 +32,7 @@ const InfoInput = ({ content, onChange, onRemove }) => {
         <button
           type="button"
           className="absolute right-3 inset-y-0 flex items-center px-1"
-          onClick={() => onRemove(content.id)}
+          onClick={onRemove}
         >
           <FaRegTrashAlt />
         </button>
