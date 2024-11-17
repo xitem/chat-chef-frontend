@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 span {
-  word-break: break-all;
+  white-space: pre-wrap;
 }
