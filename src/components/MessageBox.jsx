@@ -35,7 +35,7 @@ const MessageBox = ({ messages, isLoading }) => {
               <div className="pl-3">
                 <span className="text-base font-medium">맛있는 쉐프</span>
                 <div className="pt-3 pl-2">
-                  <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none">
+                  <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none whitespace-pre-wrap">
                     {data.content}
                   </span>
                 </div>
@@ -52,7 +52,7 @@ const MessageBox = ({ messages, isLoading }) => {
           <div className="pl-3">
             <span className="text-base font-medium">맛있는 쉐프</span>
             <div className="pt-3 pl-2">
-              <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none">
+              <span className="inline-block px-4 py-3 text-sm rounded-xl text-left bg-chef-gray-100 rounded-tl-none whitespace-pre-wrap">
                 {/* {data.content} */}
                 <PulseLoader size={5} color="#46A195" />
               </span>
