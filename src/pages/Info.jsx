@@ -4,19 +4,23 @@ import InfoInput from "../components/InfoInput";
 import AddButton from "../components/AddButton";
 import Button from "../components/Button";
 import Title from "../components/Title";
+import { useNavigate } from "react-router-dom";
 
 const Info = () => {
   // logic
 
   // TODO: set함수 추가하기
   const [ingredientList] = useState([]); // 사용자가 입력할 재료 목록
+  const history = useNavigate();
 
   const addIngredient = () => {
     console.log("재료 추가하기");
   };
 
-  const handleNext = () => {
-    console.log("chat페이지로 이동");
+  const handleNext = () => {    
+        
+    history('/info');
+
   };
 
   // view
