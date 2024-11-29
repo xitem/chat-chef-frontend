@@ -30,7 +30,24 @@ const Info = () => {
 
   const handleNext = () => {    
     //todo 최소 재료 한개이상 유효성 체크 
-    history('/info');
+    //입력값이 있는 배열
+    const filterdatalist = ingredientList.filter((item) =>item.value.trim() !== '');
+    console.log("filterdatalist 출력", filterdatalist);
+    // if(filterdatalist.length>0)
+    if(filterdatalist.length)
+    {
+      //재료입력값이 있는 경우
+      history('/chat');
+      return
+    }
+    //재료값이 없는 경우
+     alert('재료를 최소한개이상 입력해주세요');
+     return false;
+
+    
+
+
+    
   };
   const handleChange = (selecteditem) => {
     console.log("handle change===>");
@@ -84,7 +101,6 @@ useEffect(()=>{
         <div className="mt-20 overflow-auto">
 
 
-
           <form>
             {/* START:input 영역 */}
             <div>
@@ -95,7 +111,6 @@ useEffect(()=>{
             </div>
             {/* END:input 영역 */}
           </form>
-
 
 
         </div>
