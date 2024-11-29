@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import Title from "../components/Title";
 import { useNavigate } from "react-router-dom";
 
-const Info = () => {
+const Info = ({sendIngredientList }) => {
   // logic
 
   // TODO: set함수 추가하기
@@ -37,6 +37,12 @@ const Info = () => {
     if(filterdatalist.length)
     {
       //재료입력값이 있는 경우
+
+      //데이터를 부모에게 전송
+      sendIngredientList(ingredientList.map((item) => ({...item, value:item.value.trim()})))
+
+
+
       history('/chat');
       return
     }
@@ -86,14 +92,7 @@ useEffect(()=>{
       {/* START:뒤로가기 버튼 */}
       <PrevButton />
       {/* END:뒤로가기 버튼 */}
-      <div className="h-full flex flex-col">
-        {/* TODO:Title 컴포넌트 */}
-        {/* <div className="px-2 pt-6">
-       
-          <h1 className="text-4.5xl font-black text-white">
-            당신의 냉장고를 알려주세요
-          </h1>
-        </div> */}
+      <div className="h-full flex flex-col">        
         <Title mainTitle="당신의 냉장고를 알려주세요"/>
 
         {/* // TODO:Title 컴포넌트 */}

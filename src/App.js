@@ -10,7 +10,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/info" element={<Info />} />
+      <Route path="/info" element={<Info 
+      sendIngredientList={(data) => console.log(data)}/>} />
       <Route path="/chat" element={<Chat />} />
     </Routes>
   );
